@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import FavoriteProducts from "./features/favoriteProducts/FavoriteProducts";
 import CartProducts from "./features/cartProducts/CartProducts";
-import ProtectedRouter from './components/ProtectedRouter';
+import ProtectedRouter from './pages/components/ProtectedRouter';
 
 function App() {
   const user = localStorage.getItem("user");
