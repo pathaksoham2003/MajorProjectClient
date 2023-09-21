@@ -1,20 +1,39 @@
 :root {
+  /*For Dark And Light Theme*/
+  --bgc:#dce9f0;
+  --bgc-acc:#b7d0e4;
+  --h:#0f1855;
+  --sh:#58595b;
+  --but:#07496a;
+  --but-txt:#d6dee3;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  /*
-  global colors can be defined here
-  */
-  --bgc:white;
-  
+}
+html{
+  margin:0;
+  padding:0;
+}
+/* LIGHT AND DARK THEME OPTIONS */
+[data-theme="dark"]{
+  --bgc:#21201F;
+  --bgc-acc:#151515;
+  --h:#F8F8F8;
+  --sh:#CCCCCC;
+  --but:#80ACD0;
+  --but-txt:#193a5d;
+}
+/* for smooth change of the color */
+*{
+  transition: color 0.2s ease-in-out,background-color 0.5s ease-in-out;
+  margin:0;
+  padding:0;
 }

@@ -1,0 +1,21 @@
+.navbar{
+    height:64px;
+    display: flex;
+    justify-content: space-between;
+    padding:0 2%;
+    align-items: center;
+}
+/*
+xx-small (9px)
+x-small (10px)
+small (13px)
+medium (16px)
+large (18px)
+x-large (24px)
+xx-large (32px) 
+*/
+.brand{
+    width:100px;
+    height:35px;
+    font-size: 24px;
+}
