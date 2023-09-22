@@ -7,6 +7,7 @@ import Register from "./pages/Register";
 import FavoriteProducts from "./features/favoriteProducts/FavoriteProducts";
 import CartProducts from "./features/cartProducts/CartProducts";
 import ProtectedRouter from "./pages/components/ProtectedRouter";
+import AllProducts from "./features/allProducts/AllProducts";
 import Root from "./Root";
 
 function App() {
@@ -17,8 +18,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Root />}>
             <Route index element={<Home />} />
-            <Route path="register" element={<Register />} />
-            <Route path="login" element={<Login />} />
+            <Route path="/products" element={<AllProducts />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
             <Route
               path="favorite/:id"
               element={

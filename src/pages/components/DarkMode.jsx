@@ -1,7 +1,5 @@
 import React from "react";
-import { ReactComponent as Sun } from "../assets/Sun.svg";
-import { ReactComponent as Moon } from "../assets/Moon.svg";
-import "../css/DarkMode.css";
+import "./DarkMode.css";
 
 const DarkMode = () => {
     const setDarkMode = () =>{
@@ -30,8 +28,7 @@ const DarkMode = () => {
                 defaultChecked={selectedTheme === "dark"}
             />
             <label className='dark_mode_label' htmlFor='darkmode-toggle'>
-                <Sun />
-                <Moon />
+                
             </label>
         </div>
     );
