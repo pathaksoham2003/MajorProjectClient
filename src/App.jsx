@@ -24,9 +24,9 @@ function App() {
             <Route
               path="favorite/:id"
               element={
-                <ProtectedRouter user={user}>
+                // <ProtectedRouter user={user}>
                   <FavoriteProducts />
-                </ProtectedRouter>
+                // </ProtectedRouter>
               }
             />
             <Route path="cart/:id" element={<CartProducts />} />

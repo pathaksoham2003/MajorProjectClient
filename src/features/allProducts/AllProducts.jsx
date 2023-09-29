@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "./AllProducts.module.css";
 import Card from '../allFeatureComponents/Card'
 const AllProducts = () => {
   return (
     <div className={styles.container}>
-      <Card/>
+      {data.map((data)=> (
+      <Card data={data}/>
+      ))}
     </div>
   )
 }

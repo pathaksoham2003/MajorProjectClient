@@ -15,15 +15,16 @@ const NavBar = () => {
       </div>
       <div className={`${styles.toggle}`}>
         <div className={`${styles.icons}`}>
-          <Link to={`favorite/`}><img src={Heart} /></Link>
-          <Link to={`cart`}><img src={Cart} /></Link>
+          <Link to={`favorite/1`}><img src={Heart} /></Link>
+          <Link to={`cart`}
+          ><img src={Cart} /></Link>
         </div>
         <div className={styles.hamburger} onClick={()=>setIsExpanded(prev=>!prev)}>{isExpanded? <img src={Cross}/>:<img src={HamburgerMenu}/>}</div>
         <ul className={isExpanded ? `${styles.expandMenu}` : `${styles.menu}` }>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/products">Product</Link></li>
-          <li><Link to="/login">Login</Link></li>
-          <li><Link to="/register">Register</Link></li>
+          <li onClick={()=>setIsExpanded(false)}><Link to="/">Home</Link></li>
+          <li onClick={()=>setIsExpanded(false)}><Link to="/products">Product</Link></li>
+          <li onClick={()=>setIsExpanded(false)}><Link to="/login">Login</Link></li>
+          <li onClick={()=>setIsExpanded(false)}><Link to="/register">Register</Link></li>
         </ul>
       </div>
     </div>
