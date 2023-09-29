@@ -1,8 +1,11 @@
 import React from 'react'
-
+import styles from "./AllProducts.module.css";
+import Card from '../allFeatureComponents/Card'
 const AllProducts = () => {
   return (
-    <div>AllProducts</div>
+    <div className={styles.container}>
+      <Card/>
+    </div>
   )
 }
 

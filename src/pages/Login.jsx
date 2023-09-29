@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "./Login.module.css"
 import { Link } from 'react-router-dom'
-
+import Toast from './components/Toast'
 const Login = () => {
+  const [message,setMessage] = useState("");
   return (
     <div className={`${styles.container}`}>
+      <Toast message={message}/>
       <div className={styles.box}>
         <h3>Login</h3>
         <input placeholder='Username'/>

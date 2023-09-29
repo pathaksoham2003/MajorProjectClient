@@ -1,0 +1,21 @@
+.container{
+    width:100%;
+    min-height:100vh;
+    background-color: var(--bgc);
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap:wrap;
+}
+
+@media (width<450px){
+    .container{
+        align-items: center;
+    }
+}
+@media (width<770px){
+    .container{
+        align-content: center;
+    }
+}
