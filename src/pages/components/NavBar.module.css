@@ -1,7 +1,6 @@
 .navbar{
     height:64px;
     display: flex;
-    justify-content: space-between;
     padding:0 2%;
     align-items: center;
     background-color: var(--bgc-acc);
@@ -17,6 +16,7 @@ x-large (24px)
 xx-large (32px) 
 */
 .brand{
+    margin-right: auto;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -94,7 +94,7 @@ xx-large (32px)
     display: flex;
     justify-content:flex-end;
     align-items:center;
-    width:600px;
+    width:auto;
     height:35px;
 }
 .hamburger{
