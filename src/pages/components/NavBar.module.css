@@ -109,12 +109,20 @@ xx-large (32px)
 .icons{
     width:100px;
     display: flex;
-    align-items: space-between;
+    align-items: center;
     justify-content: center;
 }
-.icons img{
+.heart{
+    display: flex;
+    justify-items: center;
     margin:10px;
     width:30px;
+}
+.cart{
+    display: flex;
+    justify-items: center;
+    margin:10px;
+    width:35px;
 }
 
 @media (width<770px){
