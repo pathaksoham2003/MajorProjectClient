@@ -9,6 +9,7 @@ import CartProducts from "./features/cartProducts/CartProducts";
 import ProtectedRouter from "./pages/components/ProtectedRouter";
 import AllProducts from "./features/allProducts/AllProducts";
 import Root from "./Root";
+import GoogleLogin from "./pages/components/GoogleLogin";
 
 function App() {
   const user = localStorage.getItem("user");
@@ -19,8 +20,7 @@ function App() {
           <Route path="/" element={<Root />}>
             <Route index element={<Home />} />
             <Route path="/products" element={<AllProducts />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/welcome" element={<GoogleLogin />} />
             <Route
               path="favorite/:id"
               element={

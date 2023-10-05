@@ -38,10 +38,7 @@ const NavBar = () => {
             <Link to="/products">Product</Link>
           </li>
           <li onClick={() => setIsExpanded(false)}>
-            <Link to="/login">Login</Link>
-          </li>
-          <li onClick={() => setIsExpanded(false)}>
-            <Link to="/register">Register</Link>
+            <Link to="/welcome">Start Buying</Link>
           </li>
         </ul>
       </div>
