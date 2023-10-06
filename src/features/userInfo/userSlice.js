@@ -29,6 +29,6 @@ const userSlice = createSlice({
 
     },
     extraReducers:(builder)=>{
-
+        builder.addCase()
     }
 })
