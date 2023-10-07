@@ -82,21 +82,24 @@ const GoogleLogin = () => {
     localStorage.removeItem("google_id");
   };
 
+  const guestLogin = () => {
+
+  }
+
   return (
-    <div className={styles.container}>
+   <>
       {google_id_state ? (
-        <>
-          <Profile userData={profile} />
-          <button onClick={logOut}>LogOut</button>
-        </>
+          <Profile userData={profile} logOut={logOut}/>
       ) : (
+        <div className={styles.container}>
         <div>
-          <button onClick={()=>login()}>Sign In With Google 🚀</button>
+          <button onClick={()=> login()}>Sign In With Google 🚀</button>
           <hr />
-          <button onClick={() => {}}>GUEST LOGIN</button>
+          <button onClick={() => login()}>GUEST LOGIN</button>
+        </div>
         </div>
       )}
-    </div>
+</>
   );
 };
 

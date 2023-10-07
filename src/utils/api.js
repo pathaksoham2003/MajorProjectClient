@@ -13,3 +13,4 @@ export const USERID = localStorage.getItem("USERID");
 export const STOREID = localStorage.getItem("STOREID");
 export const USER = JSON.parse(localStorage.getItem("USER"));
 export const STORE = JSON.parse(localStorage.getItem("STORE"));
+export const SELECTEDTHEME = localStorage.getItem("selectedTheme");
