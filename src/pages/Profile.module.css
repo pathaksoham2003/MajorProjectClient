@@ -58,3 +58,28 @@
     color:var(--bgc--acc);
     background-color: var(--h);
 }
+@media (width<770px){
+    .container > div:nth-child(1){
+        flex-direction: column;
+        height: auto;
+    }
+    .container > div:nth-child(1) > div:nth-child(1){
+        height:100px;
+        width:100px;
+        padding-top:20px;
+    }
+    .container > div:nth-child(1) > div:nth-child(2){
+        justify-content: center;
+        align-items: center;
+    }
+    .container > div:nth-child(1) > div:nth-child(3){
+        padding-top: 10px;
+        padding-bottom:20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container > div:nth-child(1) > div {
+        width:100%;
+    }
+}

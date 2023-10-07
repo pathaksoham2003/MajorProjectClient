@@ -23,7 +23,9 @@ xx-large (32px)
     width:200px;
     height:35px;
     font-size: 24px;
-    color:var(--h)
+    color:var(--h);
+    font-weight:700;
+    font-size: x-large;
 }
 .menu{
     display: flex;

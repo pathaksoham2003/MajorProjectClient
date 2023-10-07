@@ -25,7 +25,7 @@ const NavBar = () => {
   return (
     <div className={`${styles.navbar}`}>
       <div className={`${styles.brand}`}>
-        ECommerce
+        Somazon
         <DarkMode />
       </div>
       <div className={`${styles.toggle}`}>
