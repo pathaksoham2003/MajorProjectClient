@@ -1,45 +1,97 @@
-import {createSlice , createAsyncThunk} from "@reduxjs/toolkit";
-import {createUser,checkUser} from "../../utils/api";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createUser, checkUser, getSpecific } from "../../utils/api";
 
-export const createUser = createAsyncThunk("User/create",async(userData)=>{
-    const response = await fetch(createUser,{
-        method:"POST",
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify(userData)
-    })
+export const getSpecificUser = createAsyncThunk(
+  "User/getSpecific",
+  async (google_id_state) => {
+    const response = await fetch(`${getSpecific}${google_id_state}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const data = await response.json();
     return data;
-})
+  }
+);
 
+export const postData = createAsyncThunk("User/postData", async (obj) => {
+  const response = await fetch(createUser, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(obj),
+  });
+  const data = await response.json();
+  return data;
+});
 
 const userSlice = createSlice({
-    name:"User",
-    initialState:{
-        user_id:"",
-        name:"",
-        email:"",
-        google_id:"",
-        picture:"",
-        error:"",
-        loading:false,
+  name: "User",
+  initialState: {
+    user_id: "",
+    name: "",
+    email: "",
+    google_id: "",
+    picture: "",
+    error: "",
+    loading: false,
+  },
+  reducers: {
+    clearUser: (state, action) => {
+      return {
+        user_id: "",
+        name: "",
+        email: "",
+        google_id: "",
+        picture: "",
+        error: "",
+        loading: false,
+      };
     },
-    reducers:{
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(postData.pending, (state, action) => {
+        state.loading = true;
+      })
+      .addCase(postData.fulfilled, (state, action) => {
+        state.loading = false;
+        // Update individual properties instead of assigning the entire action payload
+        state.user_id = action.payload.user_id;
+        state.name = action.payload.name;
+        state.email = action.payload.email;
+        state.google_id = action.payload.google_id;
+        state.picture = action.payload.picture;
+        state.error = "";
+      })
+      .addCase(postData.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(getSpecificUser.pending,(state,action)=>{
+        state.loading = true;
+      })
+      .addCase(getSpecificUser.fulfilled,(state,action)=>{
+        state.loading = false;
+        // Update individual properties instead of assigning the entire action payload
+        state.user_id = action.payload.user_id;
+        state.name = action.payload.name;
+        state.email = action.payload.email;
+        state.google_id = action.payload.google_id;
+        state.picture = action.payload.picture;
+        state.error = "";
+      })
+      .addCase(getSpecificUser.rejected,(state,action)=>{
+        state.loading = false;
+        state.error = action.payload;
+      })
+  },
+});
 
-    },
-    extraReducers:(builder)=>{
-        builder
-        .addCase(createUser.pending,(state,action)=>{
-            state.loading = true;
-        })
-        .addCase(createUser.fulfilled , (state,action)=>{
-            state.loading = false;
-            state = action.payload;
-        })
-        .addCase(createUser.rejected,(state,action)=>{
-            state.loading = false;
-            state.error = action.payload;
-        })
-    }
-})
+export const { clearUser } = userSlice.actions;
+
+export const selectUser = (state) => state.user;
+
+export default userSlice.reducer;

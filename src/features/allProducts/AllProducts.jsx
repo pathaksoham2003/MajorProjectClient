@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import styles from "./AllProducts.module.css";
 import Card from '../allFeatureComponents/Card'
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { allProductsSelector, loadingSelector } from './allProductsSlice';
+
 const AllProducts = () => {
+  const loading = useSelector(loadingSelector);
+  const allProduct = useSelector(allProductsSelector);
   const [data , setData ]  = useState([{
     name:"Marshal Headsetdsjavjdfjbdjfbjdfjsbnjdfnsbjkfdhjbvhjdbjvdjfbjdfjhbhdfbdjfbjkdfsjvbfhjdbvdjfbfbvhdfbvdfjvbbfdjfdvbdfjb",
     price:2000,
