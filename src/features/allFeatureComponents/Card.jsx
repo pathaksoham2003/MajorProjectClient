@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import styles from "./Card.module.css";
+import { useDispatch } from 'react-redux';
 const Card = ({data}) => {
+  const dispatch = useDispatch();
   return (
     <div className={styles.box}>
       <div className={styles.imageContainer}>
-      <img src={data.imageUrl}/>
+        <img src={data.imageUrl}/>
       </div>
       <h3>
         Name : {data.name}
