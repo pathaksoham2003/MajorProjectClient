@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styles from "./AllProducts.module.css";
 import Card from "../allFeatureComponents/Card";
-import HashLoader from "react-spinners/HashLoader";
 import { useSelector, useDispatch } from "react-redux";
 import {
   filteredProductsSelector,
@@ -37,8 +36,10 @@ const AllProducts = () => {
           category: "electronics",
           brand: "mac",
           quantity: 100,
-          imageUrl:
+          mainImage:
             "https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg",
+          exImg1:"https://i.pin",
+          exImg2:"https://",
         },
         {
           product_id:"2",
@@ -48,8 +49,10 @@ const AllProducts = () => {
           category: "accessories",
           quantity: 10,
           brand: "rolex",
-          imageUrl:
+          mainImage:
             "https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg",
+          exImg1:"https://i.pin",
+          exImg2:"https://",
         },
         {
           product_id:"3",
@@ -59,8 +62,10 @@ const AllProducts = () => {
           category: "electronics",
           quantity: 500,
           brand: "samsung",
-          imageUrl:
+          mainImage:
             "https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg",
+          exImg1:"https://i.pin",
+          exImg2:"https://",
         },
         {
           product_id:"4",
@@ -70,8 +75,10 @@ const AllProducts = () => {
           category: "womens",
           quantity: 20,
           brand: "floral",
-          imageUrl:
+          mainImage:
             "https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg",
+          exImg1:"https://i.pin",
+          exImg2:"https://",
         },
         {
           product_id:"5",
@@ -81,8 +88,10 @@ const AllProducts = () => {
           category: "mens",
           quantity: 30,
           brand: "jordan",
-          imageUrl:
+          mainImage:
             "https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg",
+          exImg1:"https://i.pin",
+          exImg2:"https://",
         },
         {
           product_id:"6",
@@ -92,8 +101,10 @@ const AllProducts = () => {
           category: "mens",
           quantity: 30,
           brand: "us polo",
-          imageUrl:
+          mainImage:
             "https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg",
+          exImg1:"https://i.pin",
+          exImg2:"https://",
         },
         {
           product_id:"7",
@@ -103,8 +114,10 @@ const AllProducts = () => {
           category: "electronics",
           brand: "lg",
           quantity: 500,
-          imageUrl:
+          mainImage:
             "https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg",
+          exImg1:"https://i.pin",
+          exImg2:"https://",
         },
       ])
     );

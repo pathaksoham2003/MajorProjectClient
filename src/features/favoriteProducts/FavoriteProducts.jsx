@@ -1,43 +1,10 @@
 import React, { useState } from 'react'
 import styles from "./FavoriteProducts.module.css";
-import CardStrip from '../allFeatureComponents/CardStrip';
+import CardStrip from './CardStrip';
+import { useSelector } from 'react-redux';
+import { favoriteSelector } from './favoriteProductsSlice';
 const FavoriteProducts = () => {
-  const [data , setData ]  = useState([{
-    name:"Marshal Headsetdsjavjdfjbdjfbjdfjsbnjdfnsbjkfdhjbvhjdbjvdjfbjdfjhbhdfbdjfbjkdfsjvbfhjdbvdjfbfbvhdfbvdfjvbbfdjfdvbdfjb",
-    price:2000,
-    rating:4,
-    imageUrl:"https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg"
-  },{
-    name:"Marshal Headsetdsjavjdfjbdjfbjdfjsbnjdfnsbjkfdhjbvhjdbjvdjfbjdfjhbhdfbdjfbjkdfsjvbfhjdbvdjfbfbvhdfbvdfjvbbfdjfdvbdfjb",
-    price:2000,
-    rating:4,
-    imageUrl:"https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg"
-  },{
-    name:"Marshal Headsetdsjavjdfjbdjfbjdfjsbnjdfnsbjkfdhjbvhjdbjvdjfbjdfjhbhdfbdjfbjkdfsjvbfhjdbvdjfbfbvhdfbvdfjvbbfdjfdvbdfjb",
-    price:2000,
-    rating:4,
-    imageUrl:"https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg"
-  },{
-    name:"Marshal Headsetdsjavjdfjbdjfbjdfjsbnjdfnsbjkfdhjbvhjdbjvdjfbjdfjhbhdfbdjfbjkdfsjvbfhjdbvdjfbfbvhdfbvdfjvbbfdjfdvbdfjb",
-    price:2000,
-    rating:4,
-    imageUrl:"https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg"
-  },{
-    name:"Marshal Headsetdsjavjdfjbdjfbjdfjsbnjdfnsbjkfdhjbvhjdbjvdjfbjdfjhbhdfbdjfbjkdfsjvbfhjdbvdjfbfbvhdfbvdfjvbbfdjfdvbdfjb",
-    price:2000,
-    rating:4,
-    imageUrl:"https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg"
-  },{
-    name:"Marshal Headsetdsjavjdfjbdjfbjdfjsbnjdfnsbjkfdhjbvhjdbjvdjfbjdfjhbhdfbdjfbjkdfsjvbfhjdbvdjfbfbvhdfbvdfjvbbfdjfdvbdfjb",
-    price:2000,
-    rating:4,
-    imageUrl:"https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg"
-  },{
-    name:"Marshal Headsetdsjavjdfjbdjfbjdfjsbnjdfnsbjkfdhjbvhjdbjvdjfbjdfjhbhdfbdjfbjkdfsjvbfhjdbvdjfbfbvhdfbvdfjvbbfdjfdvbdfjb",
-    price:2000,
-    rating:4,
-    imageUrl:"https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg"
-  }])
+  const data = useSelector(favoriteSelector);
   return (
     <div className={styles.container}>
       <div className={styles.head}>

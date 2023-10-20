@@ -19,14 +19,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Root />}>
             <Route index element={<Home />} />
-            <Route path="/products" element={<AllProducts />} />
-            <Route path="/welcome" element={<GoogleLogin />} />
+            <Route path="products/" element={<AllProducts />} />
+            <Route path="welcome/" element={<GoogleLogin />} />
             <Route
-              path="favorite/:id"
+              path="favorite/"
               element={
-                // <ProtectedRouter user={user}>
+                <ProtectedRouter user={user}>
                   <FavoriteProducts />
-                // </ProtectedRouter>
+                 </ProtectedRouter>
               }
             />
             <Route path="cart/:id" element={<CartProducts />} />

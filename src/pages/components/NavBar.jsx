@@ -30,7 +30,7 @@ const NavBar = () => {
       </div>
       <div className={`${styles.toggle}`}>
         <div className={`${styles.icons}`}>
-          <Link to={`favorite/1`}>
+          <Link to={`favorite/`}>
           {SELECTEDTHEME === "light" ? <LightHeart/> : <DarkHeart/>}
           </Link>
           <Link to={`cart`}>

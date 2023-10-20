@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
 import styles from "./Card.module.css";
+import CartIcon from "../../assets/cart-icon-hover.svg?react";
+import FavoriteIcon from "../../assets/favorite-filled-svgrepo-com.svg?react";
 import { useDispatch } from 'react-redux';
+import { addToFavorite } from '../favoriteProducts/favoriteProductsSlice';
 const Card = ({data}) => {
   const dispatch = useDispatch();
   return (
     <div className={styles.box}>
       <div className={styles.imageContainer}>
         <div className={styles.icons}>
-        <div className={styles.icon1}>Fav</div>
-        <div className={styles.icon2}>Cart</div>
+        <div className={styles.icon1} onClick={()=>{dispatch(addToFavorite(data))}}><FavoriteIcon/></div>
+        <div className={styles.icon2} onClick={()=>{}}><CartIcon/></div>
         </div>
-        <img src={data.imageUrl}/>
+        <img src={data.mainImage}/>
       </div>
       <h3>
         Name : {data.name}
