@@ -12,9 +12,28 @@
 }
 
 .imageContainer{
+    position: relative;
     width:100%;
     overflow: hidden;
     aspect-ratio: 1 / 1;
+}
+.imageContainer:hover{
+    opacity: 0.9;
+}
+.icons{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  display: flex;
+  transition: opacity 0.2s;
+}
+.imageContainer:hover .icons{
+    opacity: 1;
+}
+.icon1, .icon2 {
+    color:black;
 }
 .imageContainer > img {
     width:100%;

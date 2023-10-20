@@ -22,7 +22,6 @@ const allProductsSlice = createSlice({
       state.products = action.payload;
       state.filteredproducts = action.payload;
     },
-
     uniqueCategories: (state, action) => {
       state.uniqueCategories = state.products
         .map((products) => products.category)

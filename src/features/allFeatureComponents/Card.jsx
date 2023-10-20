@@ -6,6 +6,10 @@ const Card = ({data}) => {
   return (
     <div className={styles.box}>
       <div className={styles.imageContainer}>
+        <div className={styles.icons}>
+        <div className={styles.icon1}>Fav</div>
+        <div className={styles.icon2}>Cart</div>
+        </div>
         <img src={data.imageUrl}/>
       </div>
       <h3>
@@ -19,7 +23,6 @@ const Card = ({data}) => {
         {data.rating}
       </h3>
       </div>
-      <button>Add To Cart</button>
       <button>Buy Now</button>
     </div>)
 }

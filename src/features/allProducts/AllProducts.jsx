@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./AllProducts.module.css";
 import Card from "../allFeatureComponents/Card";
+import HashLoader from "react-spinners/HashLoader";
 import { useSelector, useDispatch } from "react-redux";
 import {
   filteredProductsSelector,
@@ -15,6 +16,7 @@ import {
   uniqueBrands,
   uniqueCategories,
 } from "./allProductsSlice";
+import Loading from "../../pages/Loading";
 
 const AllProducts = () => {
   const dispatch = useDispatch();
@@ -107,8 +109,9 @@ const AllProducts = () => {
       ])
     );
   }, []);
-  return (
-    <div className={styles.contain}>
+  return (<>
+    {loading ? <Loading/> : (<div className={styles.contain}>
+      
       <div className={styles.filter}>
         <hr />
         <h3>Search Product</h3>
@@ -154,8 +157,8 @@ const AllProducts = () => {
           <Card data={data} />
         ))}
       </div>
-    </div>
-  );
+    </div>)}
+    </>);
 };
 
 export default AllProducts;
