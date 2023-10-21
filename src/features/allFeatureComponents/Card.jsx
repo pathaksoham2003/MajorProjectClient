@@ -8,11 +8,11 @@ const Card = ({data}) => {
   const dispatch = useDispatch();
   return (
     <div className={styles.box}>
-      <div className={styles.imageContainer}>
-        <div className={styles.icons}>
+      <div className={styles.icons}>
         <div className={styles.icon1} onClick={()=>{dispatch(addToFavorite(data))}}><FavoriteIcon/></div>
         <div className={styles.icon2} onClick={()=>{}}><CartIcon/></div>
-        </div>
+      </div>
+      <div className={styles.imageContainer}>
         <img src={data.mainImage}/>
       </div>
       <h3>

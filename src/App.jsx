@@ -10,9 +10,8 @@ import ProtectedRouter from "./pages/components/ProtectedRouter";
 import AllProducts from "./features/allProducts/AllProducts";
 import Root from "./Root";
 import GoogleLogin from "./pages/components/GoogleLogin";
-
+import { USERID } from "./utils/api";
 function App() {
-  const user = localStorage.getItem("user");
   return (
     <>
       <Router>
@@ -24,7 +23,7 @@ function App() {
             <Route
               path="favorite/"
               element={
-                <ProtectedRouter user={user}>
+                <ProtectedRouter user={USERID}>
                   <FavoriteProducts />
                  </ProtectedRouter>
               }

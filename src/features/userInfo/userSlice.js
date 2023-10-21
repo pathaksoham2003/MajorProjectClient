@@ -11,6 +11,7 @@ export const getSpecificUser = createAsyncThunk(
       },
     });
     const data = await response.json();
+    localStorage.setItem("user_id",data.user_id);
     return data;
   }
 );
@@ -24,6 +25,7 @@ export const postData = createAsyncThunk("User/postData", async (obj) => {
     body: JSON.stringify(obj),
   });
   const data = await response.json();
+  localStorage.setItem("user_id",data.user_id);
   return data;
 });
 

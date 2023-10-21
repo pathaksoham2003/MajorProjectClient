@@ -10,14 +10,7 @@ const GoogleLogin = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const [google_id_state,setGoogleState] = useState(google_id);
-  const [profile, setProfile] = useState({
-    user_id: "",
-    google_id: "",
-    email: "",
-    name: "",
-    picture: "",
-  });
-
+  
   useEffect(() => {
     if (google_id_state) {
       dispatch(getSpecificUser(google_id_state));

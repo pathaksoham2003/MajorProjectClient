@@ -9,7 +9,7 @@ export const getSpecificProduct = `${host}api/product/specific`;
 // LOCAL STOREAGE 
 export const google_id = localStorage.getItem("google_id");
 export const TOKEN = localStorage.getItem("TOKEN");
-export const USERID = localStorage.getItem("USERID");
+export const USERID = localStorage.getItem("user_id");
 export const STOREID = localStorage.getItem("STOREID");
 export const USER = JSON.parse(localStorage.getItem("USER"));
 export const STORE = JSON.parse(localStorage.getItem("STORE"));

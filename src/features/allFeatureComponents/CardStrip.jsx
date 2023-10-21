@@ -11,7 +11,7 @@ const CardStrip = ({data}) => {
             <h3>{data.name}</h3>
             <h3>{data.price}</h3>
             <h3>{data.rating}</h3>
-            <button>Remove Favorite</button>
+            <button>Add to Cart</button>
             <button>Buy Now</button>
         </div>
     </div>
