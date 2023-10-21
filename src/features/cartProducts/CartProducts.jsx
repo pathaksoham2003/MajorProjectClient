@@ -4,7 +4,7 @@ const CartProducts = () => {
   
   return (
     <div>
-      <CardStrip/>      
+      <CardStrip/>       
     </div>
   )
 }
