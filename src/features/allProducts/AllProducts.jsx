@@ -3,6 +3,7 @@ import styles from "./AllProducts.module.css";
 import Card from "../allFeatureComponents/Card";
 import { useSelector, useDispatch } from "react-redux";
 import {
+  allProducts,
   filteredProductsSelector,
   getBrand,
   getCategory,
@@ -26,101 +27,6 @@ const AllProducts = () => {
   useEffect(() => {
     dispatch(uniqueBrands());
     dispatch(uniqueCategories());
-    dispatch(
-      loadData([
-        {
-          product_id:"1",
-          name: "Tv",
-          price: 1100,
-          rating: 1,
-          category: "electronics",
-          brand: "mac",
-          quantity: 100,
-          mainImage:
-            "https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg",
-          exImg1:"https://i.pin",
-          exImg2:"https://",
-        },
-        {
-          product_id:"2",
-          name: "Watch",
-          price: 1200,
-          rating: 3,
-          category: "accessories",
-          quantity: 10,
-          brand: "rolex",
-          mainImage:
-            "https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg",
-          exImg1:"https://i.pin",
-          exImg2:"https://",
-        },
-        {
-          product_id:"3",
-          name: "Phone",
-          price: 800,
-          rating: 2,
-          category: "electronics",
-          quantity: 500,
-          brand: "samsung",
-          mainImage:
-            "https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg",
-          exImg1:"https://i.pin",
-          exImg2:"https://",
-        },
-        {
-          product_id:"4",
-          name: "Frock",
-          price: 1000,
-          rating: 5,
-          category: "womens",
-          quantity: 20,
-          brand: "floral",
-          mainImage:
-            "https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg",
-          exImg1:"https://i.pin",
-          exImg2:"https://",
-        },
-        {
-          product_id:"5",
-          name: "Jeans",
-          price: 500,
-          rating: 4,
-          category: "mens",
-          quantity: 30,
-          brand: "jordan",
-          mainImage:
-            "https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg",
-          exImg1:"https://i.pin",
-          exImg2:"https://",
-        },
-        {
-          product_id:"6",
-          name: "Tshirt",
-          price: 200,
-          rating: 1,
-          category: "mens",
-          quantity: 30,
-          brand: "us polo",
-          mainImage:
-            "https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg",
-          exImg1:"https://i.pin",
-          exImg2:"https://",
-        },
-        {
-          product_id:"7",
-          name: "Marshal",
-          price: 100,
-          rating: 5,
-          category: "electronics",
-          brand: "lg",
-          quantity: 500,
-          mainImage:
-            "https://i.pinimg.com/550x/49/44/55/4944553088c4c7009154e4093738f549.jpg",
-          exImg1:"https://i.pin",
-          exImg2:"https://",
-        },
-      ])
-    );
   }, []);
   return (<>
     {loading ? <Loading/> : (<div className={styles.contain}>
@@ -135,7 +41,9 @@ const AllProducts = () => {
           onChange={(e) => dispatch(searchProducts(e.target.value))}
         />
         <hr />
-        <h3>Product Type</h3>
+        <h3 onClick={()=>dispatch(allProducts())}>All Products</h3>
+        <hr />
+        <h3>Categories</h3>
         {uniqCategories.map((val) => {
           return (
             <div onClick={() => dispatch(getCategory(val))}>

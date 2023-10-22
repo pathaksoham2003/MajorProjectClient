@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Home.module.css";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {getAllProduct} from "../features/allProducts/allProductsSlice";
 const Home = () => {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(getAllProduct())
+  },[])
   return (
     <div className={styles.container}>
       <div>

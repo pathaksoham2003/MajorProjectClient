@@ -8,7 +8,7 @@ import HamburgerMenu from "../../assets/hamburgerMenu.svg";
 import Cross from "../../assets/close.svg";
 import DarkMode from "./DarkMode.jsx";
 import { Link } from "react-router-dom";
-import { SELECTEDTHEME , google_id} from "../../utils/api";
+import { SELECTEDTHEME , USERID, google_id} from "../../utils/api";
 const NavBar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [theme,setTheme] = useState("");
@@ -30,10 +30,10 @@ const NavBar = () => {
       </div>
       <div className={`${styles.toggle}`}>
         <div className={`${styles.icons}`}>
-          <Link to={`favorite/`}>
+          <Link to={`/favorite/${USERID}`}>
           {SELECTEDTHEME === "light" ? <LightHeart/> : <DarkHeart/>}
           </Link>
-          <Link to={`cart`}>
+          <Link to={`/cart/${USERID}`}>
           {SELECTEDTHEME === "light" ? <LightCart/> : <DarkCart/>}
           </Link>
         </div>

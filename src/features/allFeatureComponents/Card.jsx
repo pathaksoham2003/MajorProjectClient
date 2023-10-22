@@ -13,7 +13,7 @@ const Card = ({data}) => {
         <div className={styles.icon2} onClick={()=>{}}><CartIcon/></div>
       </div>
       <div className={styles.imageContainer}>
-        <img src={data.mainImage}/>
+        <img src={data.mainimage}/>
       </div>
       <h3>
         Name : {data.name}

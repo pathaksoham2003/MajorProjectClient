@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { getAllProducts } from "../../utils/api";
 
-const getAllProduct = createAsyncThunk("Products/getAll", async () => {
+export const getAllProduct = createAsyncThunk("Products/getAll", async () => {
   const response = await fetch(getAllProducts);
   const data = await response.json();
+  console.log(data);
   return data;
 });
 
@@ -54,7 +55,7 @@ const allProductsSlice = createSlice({
     },
     ratedProducts: (state, action) => {
       state.filteredproducts = state.products.filter(
-        (product) => product.rating === action.payload
+        (product) => parseInt(product.rating) === action.payload
       );
     },
   },

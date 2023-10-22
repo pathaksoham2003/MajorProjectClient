@@ -21,7 +21,7 @@ function App() {
             <Route path="products/" element={<AllProducts />} />
             <Route path="welcome/" element={<GoogleLogin />} />
             <Route
-              path="favorite/"
+              path="favorite/:user_id"
               element={
                 <ProtectedRouter user={USERID}>
                   <FavoriteProducts />
