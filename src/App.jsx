@@ -28,7 +28,9 @@ function App() {
                  </ProtectedRouter>
               }
             />
-            <Route path="cart/:id" element={<CartProducts />} />
+            <Route path="cart/:user_id" element={<ProtectedRouter user={USERID}>
+                  <CartProducts />
+                 </ProtectedRouter>} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
