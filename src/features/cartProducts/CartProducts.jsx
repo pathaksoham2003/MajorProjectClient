@@ -4,7 +4,7 @@ const CartProducts = () => {
   
   return (
     <div>
-      <CardStrip/>       
+      This page is under development Visit products and favorite products page      
     </div>
   )
 }

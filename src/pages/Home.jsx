@@ -9,7 +9,7 @@ const Home = () => {
   },[])
   
   return (
-    <div>Kindly Visit Other Pages This Page is in development</div>
+    <div>Kindly Visit Other Pages This Page is in development. Visit products and favorite products page</div>
   )
 }
 
