@@ -9,7 +9,7 @@ const CardStrip = ({data}) => {
     <div className={styles.box}>
         <div className={styles.imageContainer}>
         <button className={styles.heart}><div>{<DarkHeartBreak/>}</div></button>
-            <img src={data.imageUrl}/></div>
+            <img src={data.mainimage}/></div>
         <div className={styles.information}>
             <h3>{data.name}</h3>
             <h3>{data.price}</h3>
