@@ -7,6 +7,7 @@ const FavoriteProducts = () => {
   const data = useSelector(favoriteSelector);
   return (
     <div className={styles.container}>
+      <h1 className={styles.heading}>Favorite Items</h1>
       <div className={styles.head}>
         <h3>Product Image</h3>
         <div className={styles.info}>
@@ -18,7 +19,7 @@ const FavoriteProducts = () => {
         </div>
       </div>
       {data.length === 0 ? (
-        <h1>No Favorite Items</h1>
+        <h1 className={styles.empty}>No Favorite Items</h1>
       ) : (
         data.map((data) => <CardStrip data={data} />)
       )}

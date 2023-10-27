@@ -33,7 +33,9 @@ const AllProducts = () => {
       
       <div className={styles.filter}>
         <hr />
-        <h3>Search Product</h3>
+        <h3 onClick={()=>dispatch(allProducts())}>All Products</h3>
+        <hr />
+       <h3>Search Product</h3>
         <input
           className={styles.search}
           placeholder="Search"
@@ -41,14 +43,12 @@ const AllProducts = () => {
           onChange={(e) => dispatch(searchProducts(e.target.value))}
         />
         <hr />
-        <h3 onClick={()=>dispatch(allProducts())}>All Products</h3>
-        <hr />
         <h3>Categories</h3>
         {uniqCategories.map((val) => {
           return (
             <div onClick={() => dispatch(getCategory(val))}>
               <label>{val}</label>
-              <h5>20</h5>
+              <h5></h5>
             </div>
           );
         })}
@@ -58,7 +58,7 @@ const AllProducts = () => {
           return (
             <div onClick={() => dispatch(getBrand(val))}>
               <label>{val}</label>
-              <h5>20</h5>
+              <h5></h5>
             </div>
           );
         })}
@@ -71,8 +71,9 @@ const AllProducts = () => {
           <label onClick={()=>dispatch(ratedProducts(4))}>4</label>
           <label onClick={()=>dispatch(ratedProducts(5))}>5</label>
         </div>
+        <hr/>
+        <h3>Price</h3>
       </div>
-
       <div className={styles.container}>
         {filteredProducts.map((data) => (
           <Card data={data} />

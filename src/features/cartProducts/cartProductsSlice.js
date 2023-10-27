@@ -3,23 +3,42 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
   name: "Cart",
   initialState: {
+    message:"",
     loading: false,
     error: "",
-    cartItems: [{ item: {}, quantity: 0 }],
+    cartItems: [],
   },
   reducers: {
     addToCart: (state, action) => {
-        state.cartItems = state.cartItems.push({item:action.payload ,quantity:1});
+      const found = state.cartItems.findIndex((data)=>data.item.product_id === action.payload.product_id)
+      if(found !== -1){
+        return;
+      } 
+      state.cartItems = [...state.cartItems,{item:action.payload ,quantity:1}]; 
     },
     removeFromCart: (state, action) => {
-      state.cartItems = state.cartItems.filter(
-        (obj) => obj.item.product_id !== action.payload.product_id
-      );
+      state.cartItems = state.cartItems.filter((obj) => obj.item.product_id !== action.payload);
     },
     incrementQuantity: (state, action) => {
-        
+        const found = state.cartItems.findIndex((obj)=>obj.item.product_id === action.payload);
+        if(state.cartItems[found].quantity === 5){
+          return;
+        }
+        if(found !== -1){
+          console.log(state.cartItems[found])
+          state.cartItems[found] = { item: state.cartItems[found].item, quantity: state.cartItems[found].quantity + 1 }
+        }
+        console.log(state.cartItems);
     },
-
+    decrementQuantity: (state,action) => {
+      const found = state.cartItems.findIndex((data)=>data.item.product_id === action.payload);
+      if(state.cartItems[found].quantity === 1) {
+        return;
+      }
+      if(found !== -1){
+        state.cartItems[found] = {item:state.cartItems[found].item , quantity:state.cartItems[found].quantity - 1}
+      }
+    }
 },
 });
 
@@ -27,6 +46,6 @@ export const cartSelector = (state) => {
   return state.cart.cartItems;
 };
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart, removeFromCart , incrementQuantity ,decrementQuantity} = cartSlice.actions;
 
 export default cartSlice.reducer;

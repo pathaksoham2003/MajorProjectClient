@@ -5,7 +5,7 @@ import { createUser, getSpecific ,google_id} from "../../utils/api";
 import {useSelector , useDispatch} from "react-redux";
 import { getSpecificUser , postData ,selectUser ,clearUser} from "../../features/userInfo/userSlice";
 import Profile from "../Profile";
-
+import { USERID } from "../../utils/api";
 const GoogleLogin = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -47,7 +47,7 @@ const GoogleLogin = () => {
     googleLogout();
     setGoogleState("")
     dispatch(clearUser());
-    localStorage.removeItem("google_id");
+    localStorage.clear();
   };
 
   const guestLogin = () => {
@@ -56,7 +56,7 @@ const GoogleLogin = () => {
 
   return (
    <>
-      {google_id_state ? (
+      {user.user_id.length !== 0 ? (
           <Profile userData={user} logOut={logOut}/>
       ) : (
         <div className={styles.container}>
