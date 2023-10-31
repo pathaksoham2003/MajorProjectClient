@@ -48,10 +48,14 @@ const userSlice = createSlice({
         email: "",
         google_id: "",
         picture: "",
+        selectedTheme:"light",
         error: "",
         loading: false,
       };
     },
+    setSelectedTheme: (state,action)=>{
+      state.selectedTheme = action.payload;
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -92,7 +96,9 @@ const userSlice = createSlice({
   },
 });
 
-export const { clearUser } = userSlice.actions;
+export const { clearUser , setSelectedTheme } = userSlice.actions;
+
+export const selectedTheme = (state) => state.user.selectedTheme;
 
 export const selectUser = (state) => state.user;
 

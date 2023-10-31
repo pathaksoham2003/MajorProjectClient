@@ -19,7 +19,7 @@ const favoriteSlice = createSlice({
         }
     }
 })
-export const favoriteSelector = (state) => {
+export const selectFavorite = (state) => {
     return state.favorite.favoriteItems;
 }
 export const {addToFavorite,removeFavorite} = favoriteSlice.actions;

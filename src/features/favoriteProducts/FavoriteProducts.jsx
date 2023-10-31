@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import styles from "./FavoriteProducts.module.css";
 import CardStrip from "./CardStrip";
 import { useSelector } from "react-redux";
-import { favoriteSelector } from "./favoriteProductsSlice";
+import {selectFavorite } from "./favoriteProductsSlice";
 const FavoriteProducts = () => {
-  const data = useSelector(favoriteSelector);
+  const data = useSelector(selectFavorite);
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>Favorite Items</h1>

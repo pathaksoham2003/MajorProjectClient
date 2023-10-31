@@ -1,6 +1,9 @@
 import React from "react";
 import styles from "./Profile.module.css";
+import { useSelector } from "react-redux";
+import { selectFavorite } from "../features/favoriteProducts/favoriteProductsSlice";
 const Profile = ({ userData, logOut }) => {
+  const favoriteItems = useSelector(selectFavorite);
   return (
     <div className={styles.container}>
       <div>
@@ -19,7 +22,7 @@ const Profile = ({ userData, logOut }) => {
         </div>
       </div>
       <div>
-        <h1>OTHER ORDER , FAVORITE </h1>
+        <h1>Favorite Products </h1>
       </div>
     </div>
   );

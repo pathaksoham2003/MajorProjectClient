@@ -11,29 +11,6 @@
     border: 2px solid var(--but);
     position: relative;
 }
-.heart{
-    all:unset;
-    background-color: var(--but-acc);
-    border-radius: 50%;
-    border: 2px solid var(--but);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:32px;
-    height: 32px;
-    position: absolute;
-    top:10px;
-    left:12px;
-}
-.heart div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin:0;
-    padding:0;
-    transform: scale(1.2);
-}
-
 .imageContainer{
     width:200px;
     aspect-ratio: 1 / 1;
@@ -118,11 +95,7 @@
     .left {
         width:30%;
     }
-    .heart{
-        left:auto;
-        position: absolute;
-        right:10px;
-    }
+    
     .box{
         width:90%;
     }

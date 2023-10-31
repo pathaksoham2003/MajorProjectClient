@@ -10,8 +10,10 @@ import ProtectedRouter from "./pages/components/ProtectedRouter";
 import AllProducts from "./features/allProducts/AllProducts";
 import Root from "./Root";
 import GoogleLogin from "./pages/components/GoogleLogin";
-import { USERID } from "./utils/api";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userInfo/userSlice";
 function App() {
+  const user = useSelector(selectUser);
   return (
     <>
       <Router>
@@ -23,12 +25,12 @@ function App() {
             <Route
               path="favorite/:user_id"
               element={
-                <ProtectedRouter user={USERID}>
+                <ProtectedRouter user={user.user_id}>
                   <FavoriteProducts />
-                 </ProtectedRouter>
+                </ProtectedRouter>
               }
             />
-            <Route path="cart/:user_id" element={<ProtectedRouter user={USERID}>
+            <Route path="cart/:user_id" element={<ProtectedRouter user={user.user_id}>
                   <CartProducts />
                  </ProtectedRouter>} />
             <Route path="*" element={<NotFound />} />
