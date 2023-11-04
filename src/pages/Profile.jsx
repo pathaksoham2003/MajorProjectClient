@@ -1,9 +1,21 @@
 import React from "react";
 import styles from "./Profile.module.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectFavorite } from "../features/favoriteProducts/favoriteProductsSlice";
-const Profile = ({ userData, logOut }) => {
+import { clearUser, selectUser } from "../features/userInfo/userSlice";
+import { useNavigate } from "react-router-dom";
+const Profile = () => {
+  const userData = useSelector(selectUser);
   const favoriteItems = useSelector(selectFavorite);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const logOut = () => {
+    dispatch(clearUser());
+    localStorage.clear();
+    navigate("/")
+  };
+
   return (
     <div className={styles.container}>
       <div>

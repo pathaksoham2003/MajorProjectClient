@@ -1,22 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./GoogleLogin.module.css";
-import { googleLogout, useGoogleLogin } from "@react-oauth/google";
-import { createUser, getSpecific ,google_id} from "../../utils/api";
-import {useSelector , useDispatch} from "react-redux";
-import { getSpecificUser , postData ,selectUser ,clearUser} from "../../features/userInfo/userSlice";
-import Profile from "../Profile";
-import { USERID } from "../../utils/api";
+import { useGoogleLogin } from "@react-oauth/google";
+import { useDispatch} from "react-redux";
+import { postData } from "../../features/userInfo/userSlice";
+import { useNavigate } from "react-router-dom";
 const GoogleLogin = () => {
-  const user = useSelector(selectUser);
   const dispatch = useDispatch();
-  const [google_id_state,setGoogleState] = useState(google_id);
-  
-  useEffect(() => {
-    if (google_id_state) {
-      dispatch(getSpecificUser(google_id_state));
-    }
-  }, []);
-
+  const navigate = useNavigate();
   const login = useGoogleLogin({
       onSuccess: (response) => getUser(response.access_token),
       onError: (error) => console.log("Login : Failed : ", error),
@@ -35,38 +25,15 @@ const GoogleLogin = () => {
         }
       ).then(async (res) => {
         const data = await res.json();
-        const { id, email, name, picture } = data;
-        dispatch(postData({ google_id: id, name, email, picture }));
-        setGoogleState(id);
-        localStorage.setItem("google_id", id);
+        const { email, name, picture } = data;
+        dispatch(postData({ name, email, picture }));
+        navigate("/profile");
       });
     }
   };
-
-  const logOut = () => {
-    googleLogout();
-    setGoogleState("")
-    dispatch(clearUser());
-    localStorage.clear();
-  };
-
-  const guestLogin = () => {
-    
-  }
-
   return (
    <>
-      {user.user_id.length !== 0 ? (
-          <Profile userData={user} logOut={logOut}/>
-      ) : (
-        <div className={styles.container}>
-        <div>
-          <button onClick={()=> login()}>Sign In With Google 🚀</button>
-          <hr />
-          <button onClick={() => guestLogin()}>GUEST LOGIN</button>
-        </div>
-        </div>
-      )}
+          <button onClick={(e)=>{e.preventDefault(); login()}}>Sign In With Google 🚀</button>
 </>
   );
 };

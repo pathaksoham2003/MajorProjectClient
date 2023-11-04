@@ -25,6 +25,7 @@ export const postData = createAsyncThunk("User/postData", async (obj) => {
     body: JSON.stringify(obj),
   });
   const data = await response.json();
+  console.log(data);
   localStorage.setItem("user_id",data.user_id);
   return data;
 });
@@ -46,7 +47,6 @@ const userSlice = createSlice({
         user_id: "",
         name: "",
         email: "",
-        google_id: "",
         picture: "",
         selectedTheme:"light",
         error: "",
@@ -55,7 +55,7 @@ const userSlice = createSlice({
     },
     setSelectedTheme: (state,action)=>{
       state.selectedTheme = action.payload;
-    }
+    },
   },
   extraReducers: (builder) => {
     builder

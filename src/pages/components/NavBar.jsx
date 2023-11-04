@@ -10,12 +10,14 @@ import LightCross from "../../assets/close-light.svg?react";
 import DarkCross from "../../assets/close-dark.svg?react";
 import DarkMode from "./DarkMode.jsx";
 import { Link } from "react-router-dom";
-import { SELECTEDTHEME , USERID} from "../../utils/api";
+import { SELECTEDTHEME } from "../../utils/api";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser, selectedTheme, setSelectedTheme } from "../../features/userInfo/userSlice";
+import { closeNavbar, selectNavbar } from "../../features/allFeatureSlice.js";
+import { toogleNavbar } from "../../features/allFeatureSlice.js";
 const NavBar = () => {
   const user = useSelector(selectUser);
-  const [isExpanded, setIsExpanded] = useState(false);
+  const isExpanded = useSelector(selectNavbar);
   const theme = useSelector(selectedTheme);
   const dispatch = useDispatch();
   useEffect(()=>{
@@ -45,19 +47,19 @@ const NavBar = () => {
         </div>
         <div
           className={styles.hamburger}
-          onClick={() => setIsExpanded((prev) => !prev)}
+          onClick={() => dispatch(toogleNavbar())}
         >
           { isExpanded ?( theme==="light"? <LightCross/> : <DarkCross/> ):( theme==="light"? <LightHamburger/> : <DarkHamburger/>)}
         </div>
         <ul className={isExpanded ? `${styles.expandMenu}` : `${styles.menu}`}>
-          <li onClick={() => setIsExpanded(false)}>
+          <li onClick={() => dispatch(closeNavbar())}>
             <Link to="/">Home</Link>
           </li>
-          <li onClick={() => setIsExpanded(false)}>
+          <li onClick={() => dispatch(closeNavbar())}>
             <Link to="/products">Product</Link>
           </li>
-          <li onClick={() => setIsExpanded(false)}>
-            <Link to="/welcome">{user.user_id ? "Profile" : "Start Buying"}</Link>
+          <li onClick={() => dispatch(closeNavbar())}>
+            <Link to={user.user_id.length === 0 ? "/login" : "/profile"}>{user.user_id !== "" ? "Profile" : "Start Buying"}</Link>
           </li>
         </ul>
       </div>

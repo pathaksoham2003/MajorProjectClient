@@ -1,6 +1,6 @@
 .container{
     background-color: var(--bgc);
-    height:calc(100vh - 64px);
+    min-height:calc(100vh - 64px);
     color:var(--h);
     display: flex;
     justify-content: center;
@@ -9,6 +9,7 @@
 }
 
 .box{
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,6 +17,7 @@
     background-color: var(--bgc-acc);
     padding:20px;
     border-radius:10px;
+    margin-bottom: 40px;
 }
 
 .box h3{
@@ -25,21 +27,41 @@
 }
 .box input{
     padding:10px;
-    font-size: large;
+    font-size: medium;
     margin:10px;
     background-color: var(--bgc);
     border: none;
     border-radius: 10px;
-}
-.box h4{
-    font-weight: 500;
     color:var(--but)
 }
+.box h4{
+    font-size: smaller;
+    font-weight: 500;
+    color:var(--but);
+    margin: 0;
+}
 .box a{
+    margin:0;
+    font-size: small;
     font-weight: 700;
     text-decoration: underline;
     color:var(--but);
 }
 .box a:hover{
     color:var(--h)
+}
+.box > button {
+    border:none;
+    background-color: var(--but);
+    padding:10px;
+    border-radius: 5px;
+    margin: 2.5px 0;
+    width:200px; 
+}
+.box > hr {
+    width:90%;
+    height:2px;
+    color:black;
+    background-color: var(--but);
+    margin:5px 0;
 }

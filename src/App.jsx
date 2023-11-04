@@ -6,12 +6,12 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import FavoriteProducts from "./features/favoriteProducts/FavoriteProducts";
 import CartProducts from "./features/cartProducts/CartProducts";
-import ProtectedRouter from "./pages/components/ProtectedRouter";
 import AllProducts from "./features/allProducts/AllProducts";
 import Root from "./Root";
 import GoogleLogin from "./pages/components/GoogleLogin";
 import { useSelector } from "react-redux";
-import { selectUser } from "./features/userInfo/userSlice";
+import { selectUser } from "./features/userInfo/userSlice.js";
+import Profile from "./pages/Profile.jsx";
 function App() {
   const user = useSelector(selectUser);
   return (
@@ -21,18 +21,12 @@ function App() {
           <Route path="/" element={<Root />}>
             <Route index element={<Home />} />
             <Route path="products/" element={<AllProducts />} />
-            <Route path="welcome/" element={<GoogleLogin />} />
-            <Route
-              path="favorite/:user_id"
-              element={
-                <ProtectedRouter user={user.user_id}>
-                  <FavoriteProducts />
-                </ProtectedRouter>
-              }
-            />
-            <Route path="cart/:user_id" element={<ProtectedRouter user={user.user_id}>
-                  <CartProducts />
-                 </ProtectedRouter>} />
+            <Route path="login" element={<Login/>}/>
+            <Route path="register" element={<Register/>}/>
+            <Route path="profile" element={<Profile/>}/>
+            <Route path="welcome" element={<GoogleLogin />} />
+            <Route path="favorite" element={<FavoriteProducts />} />
+            <Route path="cart" element={<CartProducts />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

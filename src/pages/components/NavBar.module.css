@@ -5,6 +5,7 @@
     align-items: center;
     background-color: var(--bgc-acc);
     position:relative;
+    z-index: 50;
 }
 /*
 xx-small (9px)
@@ -79,6 +80,7 @@ xx-large (32px)
     width:100vw;
     max-width:410px;
     background-color: var(--bgc);
+    z-index: 50;
 }
 .expandMenu li{
     list-style-type: none;

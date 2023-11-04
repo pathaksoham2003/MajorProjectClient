@@ -4,6 +4,22 @@
     grid-template-columns: 200px auto;
     grid-template-rows: 1;
 }
+.filtericon{
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    height: 40px;
+    aspect-ratio: 1/1;
+    width: 40px;
+    background-color: var(--but);
+    opacity: 1;
+    position: absolute;
+    top:5px;
+    left:10px;
+    z-index: 30;
+}
 .filter{
     background-color: var(--bgc-acc);
     padding:10%;
@@ -65,9 +81,30 @@
     background-color: var(--bgc--acc);
 }
 @media (width<500px){
+    .contain{
+        grid-template-columns: 100%;
+        position: absolute;
+        
+    }
     .container{
         align-items: flex-start;
-        justify-content: space-between;
+        justify-content: center;
+    }
+    .filter{
+        width:200px;
+        position:absolute;
+        left:0;
+        top:0px;
+        left:-280px;
+        z-index: 20;
+        transition: left 0.8s;
+        height:100vh;
+    }
+    .filter.active{
+        transition: left 0.8s;
+        z-index: 20;
+        left:0;
+        
     }
 }
 @media (width>500px) and (width<770px){
