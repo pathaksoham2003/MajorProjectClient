@@ -7,7 +7,7 @@ const ProtectedRouter = ({children}) => {
     return (
     <div>
         {
-            user.user_id === "1" ? <Navigate to ="/welcome"/> : children  
+            user.user_id.length === 0 ? <Navigate to ="/login"/> : children  
         }
     </div>
   )

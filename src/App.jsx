@@ -8,12 +8,10 @@ import FavoriteProducts from "./features/favoriteProducts/FavoriteProducts";
 import CartProducts from "./features/cartProducts/CartProducts";
 import AllProducts from "./features/allProducts/AllProducts";
 import Root from "./Root";
+import ProtectedRouter from "./pages/components/ProtectedRouter.jsx";
 import GoogleLogin from "./pages/components/GoogleLogin";
-import { useSelector } from "react-redux";
-import { selectUser } from "./features/userInfo/userSlice.js";
 import Profile from "./pages/Profile.jsx";
 function App() {
-  const user = useSelector(selectUser);
   return (
     <>
       <Router>
@@ -23,7 +21,9 @@ function App() {
             <Route path="products/" element={<AllProducts />} />
             <Route path="login" element={<Login/>}/>
             <Route path="register" element={<Register/>}/>
-            <Route path="profile" element={<Profile/>}/>
+            <Route path="profile" element={
+            <ProtectedRouter><Profile/></ProtectedRouter>
+            }/>
             <Route path="welcome" element={<GoogleLogin />} />
             <Route path="favorite" element={<FavoriteProducts />} />
             <Route path="cart" element={<CartProducts />} />
