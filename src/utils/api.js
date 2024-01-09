@@ -6,6 +6,7 @@ export const getSpecific = `${host}/api/user/specific/`;
 // PRODUCT ROUTES 
 export const getAllProducts = `${host}/api/product/all`;
 export const getSpecificProduct = `${host}/api/product/specific`;
+export const getAllProductsByCategory = `${host}/api/product/category`;
 // LOCAL STOREAGE 
 export const google_id = localStorage.getItem("google_id");
 export const TOKEN = localStorage.getItem("TOKEN");
