@@ -5,7 +5,7 @@ const toogleSlice = createSlice({
     initialState:{
         filter:false,
         navbar:false,
-        sliderImages:["https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg","https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"],
+        sliderImages:["https://wallpapers.com/images/high/clothes-background-qki8kukg6xull61r.webp"],
         currentImage:0,
     },
     reducers:{

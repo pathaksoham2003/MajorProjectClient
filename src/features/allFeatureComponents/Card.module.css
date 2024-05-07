@@ -1,5 +1,6 @@
 .box{
     background-color: var(--bgc);
+    min-width: 210px;
     max-width:210px;
     padding:10px;
     border: 2px solid var(--but);

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import Card from "../../features/allFeatureComponents/Card";
 import { getAllProductsByCategory } from "../../utils/api";
+import FlatList from 'flatlist-react';
 const CatHolder = ({ category }) => {
   const [products, setProducts] = useState([]);
 
@@ -21,6 +22,7 @@ const CatHolder = ({ category }) => {
         {category.toUpperCase()}
       </h3>
       <div style={{ padding: "10px", display: "flex",overflowX:"scroll" }}>
+      
         {products?.map((product) => {
           return <Card data={product} />;
         })}

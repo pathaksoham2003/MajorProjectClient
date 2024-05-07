@@ -4,9 +4,11 @@
 .Colousal{
     width: 100%;
     overflow: hidden;
-    
 }
 .Colousal > img{
     width:100%;
-    height:500px;
+    height:600px;
+}
+.categories{
+    padding: 10px;;
 }
