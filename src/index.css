@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   /*For Dark And Light Theme*/
   --bgc:#dce9f0;

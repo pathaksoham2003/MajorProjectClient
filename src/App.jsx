@@ -11,6 +11,7 @@ import Root from "./Root";
 import ProtectedRouter from "./pages/components/ProtectedRouter.jsx";
 import GoogleLogin from "./pages/components/GoogleLogin";
 import Profile from "./pages/Profile.jsx";
+import Product from "./pages/Product.jsx";
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Root />}>
             <Route index element={<Home />} />
             <Route path="products/" element={<AllProducts />} />
+            <Route path="product/:id" element={<Product />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
             <Route path="profile" element={<Profile />} />
