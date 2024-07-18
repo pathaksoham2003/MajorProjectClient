@@ -37,7 +37,7 @@ const NavBar = () => {
   return (
     <div className={`${styles.navbar}`}>
       <div className={`${styles.brand}`}>
-        <div className={`${styles.brandName}`}>Somazon</div>
+        <Link to="/" className={`${styles.brandName}`}>Somazon</Link>
         <DarkMode />
       </div>
       <div className={`${styles.toggle}`}>
