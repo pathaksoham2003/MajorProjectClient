@@ -19,11 +19,9 @@ function App() {
           <Route path="/" element={<Root />}>
             <Route index element={<Home />} />
             <Route path="products/" element={<AllProducts />} />
-            <Route path="login" element={<Login/>}/>
-            <Route path="register" element={<Register/>}/>
-            <Route path="profile" element={
-            <ProtectedRouter><Profile/></ProtectedRouter>
-            }/>
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+            <Route path="profile" element={<Profile />} />
             <Route path="welcome" element={<GoogleLogin />} />
             <Route path="favorite" element={<FavoriteProducts />} />
             <Route path="cart" element={<CartProducts />} />
