@@ -2,7 +2,7 @@ const host = import.meta.env.VITE_SERVER_URL;
 // USER ROUTES 
 export const createUser = `${host}/api/user/create`;
 export const checkuser = `${host}/api/user/check`;
-export const getSpecific = `${host}/api/user/specific/`;
+export const getSpecific = `${host}/api/user/specific`;
 // PRODUCT ROUTES 
 export const getAllProducts = `${host}/api/product/all`;
 export const getSpecificProduct = `${host}/api/product/specific`;
