@@ -19,8 +19,8 @@ const Product = () => {
   return (
     <div className="flex-1 flex flex-col align-middle items-center min-h-screen" style={{backgroundColor:"var(--bgc)"}}>
       <div className="max-w-[1024px] w-full">
-        <div className="flex flex-col sm:flex-row w-full">
-          <div className="w-1/2 aspect-square">
+        <div className="flex flex-col mt-5 sm:flex-row w-full">
+          <div className="sm:w-1/2 aspect-square">
             <img src={product.mainimage} />
             <div className="w-full flex">
               <div className="w-[100px] aspect-square rounded-3xl overflow-hidden p-3 ">
@@ -31,7 +31,7 @@ const Product = () => {
               </div>
             </div>
           </div>
-          <div className="w-1/2 p-10">
+          <div className="sm:w-1/2 p-10">
             <h1 style={{color:"var(--h)"}} className="text-2xl font-bold">{product.name}</h1>
             <h1 style={{color:"var(--h)"}}>{product.brand}</h1>
             <h1 style={{color:"var(--h)"}}>{product.category}</h1>
