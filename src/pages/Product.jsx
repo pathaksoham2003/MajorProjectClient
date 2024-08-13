@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { getSpecificProduct } from "../utils/api";
+import { checkoutProduct, getSpecificProduct } from "../utils/api";
+
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
@@ -17,7 +18,10 @@ const Product = () => {
   }, []);
 
   return (
-    <div className="flex-1 flex flex-col align-middle items-center min-h-screen" style={{backgroundColor:"var(--bgc)"}}>
+    <div
+      className="flex-1 flex flex-col align-middle items-center min-h-screen"
+      style={{ backgroundColor: "var(--bgc)" }}
+    >
       <div className="max-w-[1024px] w-full">
         <div className="flex flex-col mt-5 sm:flex-row w-full">
           <div className="sm:w-1/2 aspect-square">
@@ -32,11 +36,13 @@ const Product = () => {
             </div>
           </div>
           <div className="sm:w-1/2 p-10">
-            <h1 style={{color:"var(--h)"}} className="text-2xl font-bold">{product.name}</h1>
-            <h1 style={{color:"var(--h)"}}>{product.brand}</h1>
-            <h1 style={{color:"var(--h)"}}>{product.category}</h1>
-            <h1 style={{color:"var(--h)"}}>₹ {product.price}</h1>
-            <p style={{color:"var(--h)"}}>
+            <h1 style={{ color: "var(--h)" }} className="text-2xl font-bold">
+              {product.name}
+            </h1>
+            <h1 style={{ color: "var(--h)" }}>{product.brand}</h1>
+            <h1 style={{ color: "var(--h)" }}>{product.category}</h1>
+            <h1 style={{ color: "var(--h)" }}>₹ {product.price}</h1>
+            <p style={{ color: "var(--h)" }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Et sunt
               non ea rerum dolorum voluptatibus labore, dolore fuga aperiam ut
               temporibus quidem nihil quas molestias dolores accusamus
@@ -49,8 +55,10 @@ const Product = () => {
               est! Est facere iure a? Totam, sit culpa, ex non minima tenetur
               expedita sequi eum fugit at veritatis debitis nisi cum. Nulla
               veniam rem impedit.
-              
             </p>
+            <form action={checkoutProduct} method="POST">
+              <button style={{ backgroundColor: "var(--h)" }} type="submit">Checkout</button>
+            </form>
           </div>
         </div>
       </div>

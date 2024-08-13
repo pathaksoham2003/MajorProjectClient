@@ -12,6 +12,8 @@ import ProtectedRouter from "./pages/components/ProtectedRouter.jsx";
 import GoogleLogin from "./pages/components/GoogleLogin";
 import Profile from "./pages/Profile.jsx";
 import Product from "./pages/Product.jsx";
+import Success from "./pages/Payment/Success.jsx";
+import Failed from "./pages/Payment/Failed.jsx";
 function App() {
   return (
     <>
@@ -27,6 +29,8 @@ function App() {
             <Route path="welcome" element={<GoogleLogin />} />
             <Route path="favorite" element={<FavoriteProducts />} />
             <Route path="cart" element={<CartProducts />} />
+            <Route path="success" element={<Success />} />
+            <Route path="failed" element={<Failed />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

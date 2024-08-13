@@ -7,6 +7,8 @@ export const getSpecific = `${host}/api/user/specific`;
 export const getAllProducts = `${host}/api/product/all`;
 export const getSpecificProduct = `${host}/api/product/specific`;
 export const getAllProductsByCategory = `${host}/api/product/category`;
+// CHECKOUT STRIPE
+export const checkoutProduct = `${host}/api/product/checkout`
 // LOCAL STOREAGE 
 export const google_id = localStorage.getItem("google_id");
 export const TOKEN = localStorage.getItem("TOKEN");
