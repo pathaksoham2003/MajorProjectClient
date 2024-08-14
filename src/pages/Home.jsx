@@ -12,6 +12,7 @@ const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const sliderImages = useSelector(selectSliderImages);
 
+
   useEffect(() => {
     dispatch(getAllProduct());
   }, []);
