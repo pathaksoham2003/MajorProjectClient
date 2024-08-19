@@ -2,14 +2,52 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import Card from "../../features/allFeatureComponents/Card";
 import { getAllProductsByCategory } from "../../utils/api";
-import FlatList from 'flatlist-react';
+import FlatList from "flatlist-react";
+import Slider from "react-slick";
+// REFER THIS FOR THE SLIDERS https://react-slick.neostack.com/docs/get-started
 const CatHolder = ({ category }) => {
   const [products, setProducts] = useState([]);
+
+  const settings = {
+    dots: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    infinite:true,
+    autoplay:true,
+    autoplaySpeed:3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
 
   const fetchCatPro = async (category) => {
     const response = await fetch(`${getAllProductsByCategory}/${category}`);
     const data = await response.json();
-    console.log(data);
     setProducts(data);
   };
 
@@ -18,14 +56,17 @@ const CatHolder = ({ category }) => {
   }, []);
   return (
     <>
-      <h3 style={{ "font-size": "30px", padding: "5px 20px", color: "var(--but)"}}>
+      <h3
+        className="text-heading text-5xl pt-16 pb-4 px-4"
+      >
         {category.toUpperCase()}
       </h3>
-      <div style={{ padding: "10px", display: "flex",overflowX:"scroll" }}>
-      
+      <div className="h-[500px] px-5">
+       <Slider auto {...settings}>
         {products?.map((product) => {
           return <Card data={product} />;
         })}
+      </Slider>
       </div>
     </>
   );

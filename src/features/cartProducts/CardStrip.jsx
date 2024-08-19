@@ -12,7 +12,7 @@ const CardStrip = ({data}) => {
             <h3>{data.item.name}</h3>
             <h3>{data.item.price}</h3>
             <div className={styles.increDecre}><span onClick={()=>dispatch(decrementQuantity(data.item.product_id))}>-</span><h4>{data.quantity}</h4><span  className={styles.left} onClick={()=> dispatch(incrementQuantity(data.item.product_id))}>+</span></div>
-            <button onClick={()=> dispatch(removeFromCart(data.item.product_id))}>Remove Item</button>
+            <button onClick={()=> dispatch(removeFromCart(data.item))}>Remove Item</button>
             <button>Buy Now</button>
         </div>
     </div>

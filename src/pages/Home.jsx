@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProduct } from "../features/allProducts/allProductsSlice";
-import styles from "./Home.module.css";
 import { selectSliderImages } from "../features/allFeatureSlice";
 import CatHolder from "./components/CatHolder";
 import { Carousel } from "react-responsive-carousel";
@@ -47,8 +46,7 @@ const Home = () => {
     //   </div>
     // </div>
     <div
-      className="w-full min-h-screen flex justify-center"
-      style={{ backgroundColor: "var(--bgc)" }}
+      className="w-full min-h-screen flex justify-center bg-bgc"
     >
       <div className="flex flex-col w-full max-w-[1440px]">
         <div className="flex sm:flex-row flex-col mt-5">
@@ -102,7 +100,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className={styles.categories}>
+        <div>
+
+        </div>
+        <div className="p-3">
           <CatHolder category="electronics" />
           <CatHolder category="womens" />
           <CatHolder category="mens" />

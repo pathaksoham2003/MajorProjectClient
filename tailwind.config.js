@@ -5,13 +5,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#2B2B2B",
-        lightText:"#858584",
-        lightGrey:"#3B3B3B",
-        secondary: "#A259FF",
-        dimWhite: "rgba(255, 255, 255, 0.7)",
-        dimBlue: "rgba(9, 151, 124, 0.1)",
-        textGrey:"#CCCCCC",
+        nav: "rgba(var(--nav))",
+        background: "rgba(var(--background))",
+        card: "rgba(var(--card))",
+        success: "rgba(var(--success))",
+        danger: "rgba(var(--danger))",
+        primary: "rgba(var(--primary))",
+        secondary: "rgba(var(--secondary))",
+        accent: "rgba(var(--accent))",
+        heading: "rgba(var(--heading))",
+        subheading: "rgba(var(--subheading))",
+        paragraph: "rgba(var(--paragraph))",
+        border: "rgb(var(--border))",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

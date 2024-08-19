@@ -4,7 +4,6 @@ import { getAllProducts } from "../../utils/api";
 export const getAllProduct = createAsyncThunk("Products/getAll", async () => {
   const response = await fetch(getAllProducts);
   const data = await response.json();
-  console.log(data);
   return data;
 });
 

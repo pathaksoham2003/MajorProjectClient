@@ -5,7 +5,7 @@ import { cartSelector } from './cartProductsSlice'
 import styles from "../favoriteProducts/FavoriteProducts.module.css"
 const CartProducts = () => {
   const cartItems = useSelector(cartSelector);
-  console.log(cartItems)
+
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>Cart Items</h1>
