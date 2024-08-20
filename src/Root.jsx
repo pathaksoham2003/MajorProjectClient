@@ -6,6 +6,7 @@ import { selectedTheme } from "./features/userInfo/userSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Nav from "./pages/components/Nav";
+import Footer from "./pages/components/Footer";
 const Root = () => {
   const theme = useSelector(selectedTheme);
   const navigation = useNavigate();
@@ -32,6 +33,7 @@ const Root = () => {
       <div className="w-full h-full min-h-screen bg-background">
         <Outlet />
       </div>
+      <Footer/>
     </>
   );
 };
