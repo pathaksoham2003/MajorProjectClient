@@ -6,6 +6,7 @@ import { selectFavorite } from "../../features/favoriteProducts/favoriteProducts
 
 const Nav = () => {
   const [stateTheme, setTheme] = useState("day");
+  const [allPro, setPro] = useState(false);
   const CartItems = useSelector(cartSelector);
   const Favorite = useSelector(selectFavorite);
   const changeTheme = (theme) => {
@@ -32,12 +33,37 @@ const Nav = () => {
   return (
     <div className="w-full flex h-[64px] justify-center bg-nav">
       <div className="w-full max-w-[1440px] flex flex-1 items-center justify-between bg-navbar">
-        <Link to="/" className="text-3xl text-heading">
+        <Link to="/" className="text-3xl text-heading font-bold">
           Somazon
         </Link>
-        <div className="flex text-black p-2 bg-background rounded-xl">
-          <div>sds</div>
-          <input className=" w-[500px] bg-background border-none outline-none px-4" placeholder="Search for the product you need..." />
+        <div className="flex text-black rounded-l-xl">
+          <div className="relative bg-primary flex rounded-l-xl">
+            <Link to="/products" className="text-white rounded-l-md font-semibold p-2">All Products</Link>
+            <div className="py-2 bg-blue-500" onClick={() => setPro((prev) => !prev)}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="white"
+                className="size-6"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+
+            {allPro && (
+              <div className={`flex absolute bg-white z-50 -bottom-20 left-0`}>
+                <h2>Hellooo</h2>
+              </div>
+            )}
+          </div>
+          <input
+            className=" w-[500px] bg-background border-none outline-none px-4 p-2"
+            placeholder="Search for the product you need..."
+          />
         </div>
         <div className="p-3 flex items-center">
           <div className="h-full relative mx-4">
