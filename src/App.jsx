@@ -14,6 +14,7 @@ import Profile from "./pages/Profile.jsx";
 import Product from "./pages/Product.jsx";
 import Success from "./pages/Payment/Success.jsx";
 import Failed from "./pages/Payment/Failed.jsx";
+import AllPro from "./features/allProducts/AllPro.jsx";
 function App() {
   return (
     <>
@@ -31,7 +32,7 @@ function App() {
             <Route path="cart" element={<CartProducts />} />
             <Route path="success" element={<Success />} />
             <Route path="failed" element={<Failed />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<AllPro />} />
           </Route>
         </Routes>
       </Router>
