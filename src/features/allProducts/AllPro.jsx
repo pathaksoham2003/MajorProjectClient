@@ -30,8 +30,9 @@ import {
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
 import Card from '../allFeatureComponents/Card'
-import { useSelector } from 'react-redux'
-import { filteredProductsSelector } from './allProductsSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { filteredProductsSelector, getCategory, getUniqueCat } from './allProductsSlice'
+import { toogleFilter } from '../allFeatureSlice'
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
@@ -41,11 +42,9 @@ const sortOptions = [
   { name: 'Price: High to Low', href: '#', current: false },
 ]
 const subCategories = [
-  { name: 'Totes', href: '#' },
-  { name: 'Backpacks', href: '#' },
-  { name: 'Travel Bags', href: '#' },
-  { name: 'Hip Bags', href: '#' },
-  { name: 'Laptop Sleeves', href: '#' },
+  { name: 'Electronics'},
+  { name: 'Mens'},
+  { name: 'Womens'},
 ]
 const filters = [
   {
@@ -90,8 +89,10 @@ function classNames(...classes) {
 }
 
 export default function AllPro() {
+  const dispatch = useDispatch();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
   const filteredProducts = useSelector(filteredProductsSelector);
+  const uniqCategories = useSelector(getUniqueCat);
 
   return (
     <div className="bg-background">
@@ -124,11 +125,14 @@ export default function AllPro() {
               <form className="mt-4 border-t border-gray-200">
                 <h3 className="sr-only">Categories</h3>
                 <ul role="list" className="px-2 py-3 font-medium text-heading">
-                  {subCategories.map((category) => (
-                    <li key={category.name}>
-                      <a href={category.href} className="block px-2 py-3">
-                        {category.name}
-                      </a>
+                  {uniqCategories.map((val) => (
+                    <li key={val}>
+                      <h2 onClick={() => {
+                    dispatch(getCategory(val));
+                    dispatch(toogleFilter());
+                  }} className="block px-2 py-3">
+                        {val}
+                      </h2>
                     </li>
                   ))}
                 </ul>

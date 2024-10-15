@@ -24,18 +24,20 @@ const Product = () => {
     >
       <div className="max-w-[1024px] w-full">
         <div className="flex flex-col mt-5 sm:flex-row w-full">
-          <div className="sm:w-1/2 aspect-square">
-            <img src={product.mainimage} />
-            <div className="w-full flex">
-              <div className="w-[100px] aspect-square rounded-3xl overflow-hidden p-3 ">
+          <div className="sm:w-1/2">
+            <div className="w-full flex justify-center aspect-square bg-nav">
+              <img className="h-full" src={product.mainimage} />
+            </div>
+            <div className="w-full flex bg-nav">
+              <div className="w-[100px] bg-white aspect-square overflow-hidden px-3 ">
                 <img className="object-contain" src={product.eximg1} />
               </div>
-              <div className="w-[100px] aspect-square rounded-3xl overflow-hidden p-3">
+              <div className="w-[100px] bg-white aspect-square overflow-hidden px-3">
                 <img className="object-contain" src={product.eximg2} />
               </div>
             </div>
           </div>
-          <div className="sm:w-1/2 p-10">
+          <div className="sm:w-1/2 px-10">
             <h1 style={{ color: "var(--h)" }} className="text-2xl font-bold">
               {product.name}
             </h1>
@@ -56,9 +58,22 @@ const Product = () => {
               expedita sequi eum fugit at veritatis debitis nisi cum. Nulla
               veniam rem impedit.
             </p>
-            <form action={checkoutProduct} method="POST">
-              <button style={{ backgroundColor: "var(--h)" }} type="submit">Checkout</button>
-            </form>
+            <div className="flex py-5">
+              <button
+                className="bg-primary rounded-lg px-5 py-2 text-white font-semibold mx-2"
+                type="submit"
+              >
+                Add to cart
+              </button>
+              <form action={checkoutProduct} method="POST">
+                <button
+                  className="bg-primary rounded-lg px-5 py-2 text-white font-semibold mx-2"
+                  type="submit"
+                >
+                  Checkout
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
