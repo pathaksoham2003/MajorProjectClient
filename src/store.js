@@ -6,24 +6,24 @@ import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
 import { thunk } from "redux-thunk";
 
-import productReducer from "./features/allProducts/allProductsSlice";
-import favoriteReducer from "./features/favoriteProducts/favoriteProductsSlice";
-import cartReducer from "./features/cartProducts/cartProductsSlice";
-import toogleReducer from "./features/allFeatureSlice";
+import cartReducer from "./features/cartSlice";
 import userReducer from "./features/userInfo/userSlice";
+import shopReducer from "./features/shopSlice";
+import productReducer from "./features/productSlice";
+import favoriteSlice from "./features/favoriteSlice";
 
 const rootReducer = combineReducers({
   user: userReducer,
-  product: productReducer,
-  favorite: favoriteReducer,
+  shop:shopReducer,
+  product:productReducer,
+  favorites: favoriteSlice,
   cart: cartReducer,
-  toogle: toogleReducer,
 });
 
 const rootPersistConfig = {
   key: "root",
   storage,
-  whitelist: ["user", "product", "favorite", "cart", "toogle"], // These reducers will be persisted
+  whitelist: ["user", "favorite", "cart", "toogle","shop"],
 };
 
 const persistedReducer = persistReducer(rootPersistConfig, rootReducer);

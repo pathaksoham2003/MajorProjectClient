@@ -2,7 +2,7 @@
 
 :root {
   /* Default Light Theme */
-  --nav: 249, 250, 251, 255;
+  /* --nav: 249, 250, 251, 255;
   --background: 241, 243, 247, 255;
   --border: 220, 220, 220;
   --card: 245, 245, 245;
@@ -13,33 +13,50 @@
   --subheading: 55, 55, 55;
   --paragraph: 85, 85, 85;
   --success: 0, 128, 0,255;
-  --danger: 255, 0, 0,255;
+  --danger: 255, 0, 0,255; */
+
+  --background:241, 243, 247, 255;
+  --text: 0, 0, 0;
+  --subheading:55, 55, 55;
+  --primary:33, 150, 243,158;
+  --secondary: 158, 158, 158;
+
+  --success:50, 200, 50;
+  --danger:255,0,0;
 }
 
 .night {
-  --nav: 55,65,81,255;
-  --background: 31, 41, 55, 255;
+  /* --nav: 55,65,81,255;
   --border: 220, 220, 220;
   --card: 55,65,81,255;
-  --primary: 26,86,219,255;
-  --secondary: 158, 158, 158;
   --accent: 255, 198, 21;
-  --heading: 255, 255, 255;
   --subheading: 55, 55, 55;
-  --paragraph: 85, 85, 85;
+  --paragraph: 85, 85, 85; */
+  --background: 31, 41, 55, 255;
+  --text: 255, 255, 255;
+  --subheading:55, 55, 55;
+  --primary: 33, 150, 158;
+  --secondary: 250, 204, 21;
+
+  --success:50, 200, 50;
+  --danger:255,0,0;
 }
 
 .day {
-  --nav: 241,241,241,255;
-  --background: 255,255,255,255;
+  /* --nav: 241,241,241,255;
   --border: 53,62,77,255;
   --card: 245, 245, 245;
-  --primary: 33, 150, 243;
-  --secondary: 158, 158, 158;
   --accent: 255, 198, 21;
-  --heading: 0, 0, 0;
   --subheading: 55, 55, 55;
-  --paragraph: 85, 85, 85;
+  --paragraph: 85, 85, 85; */
+  --background: 255,255,255,255;
+  --text: 0, 0, 0;
+  --subheading:55, 55, 55;
+  --primary: 33, 150, 158;
+  --secondary: 250, 204, 21;
+
+  --success:50, 200, 50;
+  --danger:255,0,0;
 }
 
 /* for smooth change of the color */

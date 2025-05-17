@@ -1,14 +1,11 @@
 import React, { useEffect } from "react";
 import { Outlet, useNavigate, useParams } from "react-router-dom";
-import NavBar from "./pages/components/NavBar";
 import { useSelector } from "react-redux";
-import { selectedTheme } from "./features/userInfo/userSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Nav from "./pages/components/Nav";
-import Footer from "./pages/components/Footer";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 const Root = () => {
-  const theme = useSelector(selectedTheme);
   const navigation = useNavigate();
 
   useEffect(() => {
@@ -30,7 +27,7 @@ const Root = () => {
         autoClose={1500}
         theme={localStorage.getItem("theme") === "day" ? "light" : "dark"}
       />
-      <div className="w-full h-full min-h-screen bg-background">
+      <div className="w-full h-full min-h-screen bg-background pt-[60px]">
         <Outlet />
       </div>
       <Footer/>
